@@ -6,7 +6,7 @@ import { CountdownContainer, Separator } from './styles'
 export function Countdown() {
   const {
     activeCycle,
-    activeCycledId,
+    activeCycleId,
     markCurrentCycleAsFinished,
     amountSecondsPassed,
     setSecondsPassed,
@@ -49,7 +49,7 @@ export function Countdown() {
   }, [
     activeCycle,
     totalSeconds,
-    activeCycledId,
+    activeCycleId,
     markCurrentCycleAsFinished,
     setSecondsPassed,
   ])
@@ -57,6 +57,8 @@ export function Countdown() {
   useEffect(() => {
     if (activeCycle) {
       document.title = `${minutes}:${seconds}`
+    } else {
+      document.title = 'pomodoro'
     }
   }, [minutes, seconds, activeCycle])
 
